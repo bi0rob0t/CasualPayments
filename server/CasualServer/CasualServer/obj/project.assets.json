@@ -12543,11 +12543,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Курсач\\2 курс\\server\\CasualServer\\CasualServer\\CasualServer.csproj",
+      "projectUniqueName": "D:\\Курсач\\2 курс\\CasualPayments\\server\\CasualServer\\CasualServer\\CasualServer.csproj",
       "projectName": "CasualServer",
-      "projectPath": "D:\\Курсач\\2 курс\\server\\CasualServer\\CasualServer\\CasualServer.csproj",
+      "projectPath": "D:\\Курсач\\2 курс\\CasualPayments\\server\\CasualServer\\CasualServer\\CasualServer.csproj",
       "packagesPath": "C:\\Users\\whaT\\.nuget\\packages\\",
-      "outputPath": "D:\\Курсач\\2 курс\\server\\CasualServer\\CasualServer\\obj\\",
+      "outputPath": "D:\\Курсач\\2 курс\\CasualPayments\\server\\CasualServer\\CasualServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",

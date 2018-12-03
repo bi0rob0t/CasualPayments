@@ -1,0 +1,11 @@
+D:\Курсач\2 курс\CasualPayments\server\CasualServer\CasualServer\bin\Debug\netcoreapp2.0\CasualServer.deps.json
+D:\Курсач\2 курс\CasualPayments\server\CasualServer\CasualServer\bin\Debug\netcoreapp2.0\CasualServer.runtimeconfig.json
+D:\Курсач\2 курс\CasualPayments\server\CasualServer\CasualServer\bin\Debug\netcoreapp2.0\CasualServer.runtimeconfig.dev.json
+D:\Курсач\2 курс\CasualPayments\server\CasualServer\CasualServer\bin\Debug\netcoreapp2.0\CasualServer.dll
+D:\Курсач\2 курс\CasualPayments\server\CasualServer\CasualServer\bin\Debug\netcoreapp2.0\CasualServer.pdb
+D:\Курсач\2 курс\CasualPayments\server\CasualServer\CasualServer\obj\Debug\netcoreapp2.0\CasualServer.csprojResolveAssemblyReference.cache
+D:\Курсач\2 курс\CasualPayments\server\CasualServer\CasualServer\obj\Debug\netcoreapp2.0\CasualServer.csproj.CoreCompileInputs.cache
+D:\Курсач\2 курс\CasualPayments\server\CasualServer\CasualServer\obj\Debug\netcoreapp2.0\CasualServer.AssemblyInfoInputs.cache
+D:\Курсач\2 курс\CasualPayments\server\CasualServer\CasualServer\obj\Debug\netcoreapp2.0\CasualServer.AssemblyInfo.cs
+D:\Курсач\2 курс\CasualPayments\server\CasualServer\CasualServer\obj\Debug\netcoreapp2.0\CasualServer.dll
+D:\Курсач\2 курс\CasualPayments\server\CasualServer\CasualServer\obj\Debug\netcoreapp2.0\CasualServer.pdb

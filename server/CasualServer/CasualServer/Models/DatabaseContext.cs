@@ -29,6 +29,7 @@ namespace CasualServer.Models
         {                 
             // использование Fluent API
             base.OnModelCreating(modelBuilder);
+
         }
     }
 }

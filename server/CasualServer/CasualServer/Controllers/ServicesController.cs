@@ -22,7 +22,57 @@ namespace CasualServer.Controllers
         [HttpGet]
         public JsonResult GetServices()
         {
-            return Json(_dbContext.Services.ToList());
+            var result = _dbContext.Services
+                .Select(service => new
+                {
+                    ServiceId = service.ServiceId,
+                    ServiceName = service.ServiceName,
+                    CategoryId = service.Category.CategoryId
+                })
+                .ToList();
+            return Json(result);
+        }
+
+        [HttpPost]
+        public void AddService([FromHeader]string serviceName, [FromHeader]string categoryName)
+        {
+           var category = _dbContext.Caterogies.Where(c => c.CategoryName == categoryName).First();
+            _dbContext.Services.Add(new Service { ServiceName = serviceName, Category = category });
+            _dbContext.SaveChanges();
+        }
+
+        [HttpDelete("{value}")]
+        public void DeleteService(string value)
+        {
+            var entity = _dbContext.Services.Where(s => s.ServiceName == value).ToList();
+            _dbContext.Services.RemoveRange(entity);
+            _dbContext.SaveChanges();
+        }
+
+        [Route("services/name")]
+        [HttpPut("{value}")]
+        public void ChangeNameService(string value, [FromHeader]string newValue)
+        {
+            var entity = _dbContext.Services.Where(s => s.ServiceName == value).ToList();
+            foreach (var item in entity)
+            {
+                item.ServiceName = newValue;
+            }
+            _dbContext.SaveChanges();
+        }
+
+        [Route("services/category")]
+        [HttpPut("{value}")]
+        public void ChangeCategoryService(string value, [FromHeader]string newValue)
+        {
+            var entity = _dbContext.Services.Where(s => s.ServiceName == value).ToList();
+            var category = _dbContext.Caterogies.Where(c => c.CategoryName == newValue).First();
+
+            foreach (var item in entity)
+            {               
+                item.Category = category;
+            }
+            _dbContext.SaveChanges();
         }
 
     }

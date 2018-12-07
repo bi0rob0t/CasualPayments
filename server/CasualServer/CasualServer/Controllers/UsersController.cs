@@ -24,5 +24,32 @@ namespace CasualServer.Controllers
         {
             return Json(_dbContext.Users.ToList());
         }
+
+        [HttpPost]
+        public void AddUser([FromHeader]string nickname, [FromHeader]string login, [FromHeader]string password)
+        {
+
+            _dbContext.Users.Add(new User { Login = login, Nickname = nickname, Password = password });
+            _dbContext.SaveChanges();
+        }
+
+        [HttpDelete("{value}")]
+        public void DeleteUser(string value)
+        {
+            var entity = _dbContext.Users.Where(u => u.Nickname == value).ToList();
+            _dbContext.Users.RemoveRange(entity);
+            _dbContext.SaveChanges();
+        }
+
+        [HttpPut("{value}")]
+        public void ChangeNicknameUser(string value, [FromHeader]string newValue)
+        {
+            var entity = _dbContext.Users.Where(u => u.Nickname == value).ToList();
+            foreach (var item in entity)
+            {
+                item.Nickname = newValue;
+            }
+            _dbContext.SaveChanges();
+        }
     }
 }

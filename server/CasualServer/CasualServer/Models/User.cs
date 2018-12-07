@@ -10,6 +10,6 @@ namespace CasualServer.Models
         public int UserId { get; set; }
         public string Nickname { get; set; }
         public string Login { get; set; }
-        public int Password { get; set; }
+        public string Password { get; set; }
     }
 }

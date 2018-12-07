@@ -13,7 +13,6 @@ namespace CasualServer.Controllers
     public class CategoriesController : Controller
     {
         private readonly DatabaseContext _dbContext;
-
         public CategoriesController(DatabaseContext dbContext)
         {
             this._dbContext = dbContext;
@@ -26,11 +25,9 @@ namespace CasualServer.Controllers
             return Json(_dbContext.Caterogies.ToList());
         }
 
-
         [HttpPost("{value}")]
         public void AddCategory(string value)
         {
-            //Console.WriteLine(value);
             _dbContext.Caterogies.Add(new Category { CategoryName = value });
             _dbContext.SaveChanges();
         }

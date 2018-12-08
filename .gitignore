@@ -1,0 +1,8 @@
+
+*.lref
+*.cache
+*.lock
+*.ide-shm
+*.ide-shm
+*.ide-wal
+server/CasualServer/.vs/CasualServer/v15/Server/sqlite3/storage.ide-wal

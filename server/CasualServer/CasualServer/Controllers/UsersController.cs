@@ -25,6 +25,8 @@ namespace CasualServer.Controllers
             return Json(_dbContext.Users.ToList());
         }
 
+
+
         [HttpPost]
         public void AddUser([FromHeader]string nickname, [FromHeader]string login, [FromHeader]string password)
         {
@@ -50,6 +52,21 @@ namespace CasualServer.Controllers
                 item.Nickname = newValue;
             }
             _dbContext.SaveChanges();
+        }
+
+        [Route("check")]
+        [HttpGet]
+        public bool CheckAuthOfLogPass([FromHeader]string login, [FromHeader]string password)
+        {
+            try
+            {
+                var entity = _dbContext.Users.Where(u => u.Login == login && u.Password == password).First();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

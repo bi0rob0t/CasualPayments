@@ -4,8 +4,10 @@ namespace CasualServer.Models
 {
     public class Log
     {
-        public int Id { get; set; }
+        public int logId { get; set; }
         public DateTime Time { get; set; }
-        public Action Action { get; set; }
+        public string actionName { get; set; }
+        public string serviceName { get; set; }
+        public string userName { get; set; }
     }
 }

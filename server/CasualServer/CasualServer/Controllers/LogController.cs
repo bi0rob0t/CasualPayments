@@ -26,14 +26,17 @@ namespace CasualServer.Controllers
             {
                 LogId = l.Id,
                 Time = l.Time,
-                ActionId = l.Action.ActionId
+                ActionName = l.Action.ActionType,
+                ServiceName = l.Action.Service.ServiceName,
+                UserName = l.Action.User.Nickname
+
             }
                 ).ToList();
 
-            return Json(_dbContext.Log.ToList());
+            return Json(result);
         }
 
-        [HttpPost("actionType")]
+        [HttpPost("{actionType}")]
         public void AddActionToLog(string actionType)
         {
             var action = _dbContext.Actions.Where(a => a.ActionType == actionType).First();

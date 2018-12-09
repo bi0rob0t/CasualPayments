@@ -8,7 +8,6 @@ D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\bin\D
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\bin\Debug\DevExpress.Mvvm.UI.pdb
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\bin\Debug\Newtonsoft.Json.pdb
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\bin\Debug\Newtonsoft.Json.xml
-D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\CasualClient.csprojResolveAssemblyReference.cache
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\MainWindow.g.cs
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\App.g.cs
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\CasualClient_MarkupCompile.cache
@@ -32,3 +31,12 @@ D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\D
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\App.baml
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\AddCategory.g.cs
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\AddCategory.baml
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\AddService.g.cs
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\AddService.baml
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\Users.g.cs
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\Users.baml
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\CasualClient.csprojResolveAssemblyReference.cache
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\LogView.g.cs
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\LogView.baml
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\Statistics.g.cs
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\Statistics.baml

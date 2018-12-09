@@ -1,4 +1,5 @@
-﻿using CasualServer.Models;
+﻿using CasualClient.Views;
+using CasualServer.Models;
 using DevExpress.Mvvm;
 using Newtonsoft.Json;
 using System;
@@ -40,6 +41,13 @@ namespace CasualClient.ViewModels
             set { _selectedCategory = value; RaisePropertyChanged("SelectedCategory");  }
         }
 
+        private string _selectedService;
+
+        public string SelectedService
+        {
+            get { return _selectedService; }
+            set { _selectedService = value; RaisePropertyChanged("SelectedService"); }
+        }
         private void OnSelected()
         {
             //MessageBox.Show("Test");
@@ -107,14 +115,110 @@ namespace CasualClient.ViewModels
                 {
                     AddCategory ad = new AddCategory();
                     ad.ShowDialog();
+                    getCategories();
                 });
             }
         }
 
+        public ICommand DeleteCategory
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    if (_selectedCategory != null)
+                    {
+                        try
+                        {
+
+                        
+                        WebRequest request = WebRequest.Create($"http://localhost:5000/categories/{_selectedCategory}");
+                        request.Method = "DELETE";
+                        request.ContentType = "application/json";
+                        request.ContentLength = 0;
+                        WebResponse response = request.GetResponse();
+                        getCategories();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Невозможно удалить категорию, в которой есть услуги");
+                        }
+                    }
+                   
+
+                });
+            }
+        }
+
+        public ICommand AddService
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    AddService ad = new AddService();
+                    ad.ShowDialog();
+                    getCategories();
+                });
+            }
+        }
+
+        public ICommand DeleteService
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    if (_selectedService != null)
+                    {
+                        WebRequest request = WebRequest.Create($"http://localhost:5000/services/{_selectedService}");
+                        request.Method = "DELETE";
+                        request.ContentType = "application/json";
+                        request.ContentLength = 0;
+                        WebResponse response = request.GetResponse();
+                        getCategories();
+                    }
 
 
+                });
+            }
+        }
 
+        public ICommand OpenUsers
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    Users ad = new Users();
+                    ad.ShowDialog();                    
+                });
+            }
+        }
 
+        public ICommand OpenLog
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    LogView log = new LogView();
+                    log.ShowDialog();
+                });
+            }
+        }
+
+        public ICommand OpenStatistics
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    Statistics st = new Statistics();
+                    st.ShowDialog();
+                });
+            }
+        }
 
 
 

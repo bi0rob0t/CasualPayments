@@ -67,16 +67,33 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\JsonPafseServiceName.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserService.cs" />
     <Compile Include="ViewModels\AddCategoryVM.cs" />
+    <Compile Include="ViewModels\AddServiceVM.cs" />
+    <Compile Include="ViewModels\LogVM.cs" />
+    <Compile Include="ViewModels\StatisticsVM.cs" />
+    <Compile Include="ViewModels\UsersVM.cs" />
     <Compile Include="Views\AddCategory.xaml.cs">
       <DependentUpon>AddCategory.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AuthVM.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
+    <Compile Include="Views\AddService.xaml.cs">
+      <DependentUpon>AddService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogView.xaml.cs">
+      <DependentUpon>LogView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Statistics.xaml.cs">
+      <DependentUpon>Statistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users.xaml.cs">
+      <DependentUpon>Users.xaml</DependentUpon>
     </Compile>
     <Page Include="Styles\Brushes.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -90,7 +107,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AuthWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LogView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,6 +137,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\RegisterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Statistics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Users.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

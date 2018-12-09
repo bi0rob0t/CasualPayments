@@ -21,51 +21,51 @@
             <ColumnDefinition Width="564*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="21*"/>
-            <RowDefinition Height="31*"/>
-            <RowDefinition Height="307*"/>
-            <RowDefinition Height="36*"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="328*"/>
+            <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
 
-        <Menu Grid.Row ="0" Grid.ColumnSpan="4">
+        <Menu FontSize="16" Grid.Row ="0" Grid.ColumnSpan="4">
             <MenuItem Header="Пользователи">
-                <MenuItem Header="Информация о пользователях"/>
+                <MenuItem Header="Информация о пользователях" Command="{Binding OpenUsers}"/>
             </MenuItem>
             <MenuItem Header="Лог">
-                <MenuItem Header="Просмотреть лог"/>
-                <MenuItem Header="Тут должна быть статистика"/>
+                <MenuItem Header="Просмотреть лог" Command="{Binding OpenLog}"/>
+                <MenuItem Header="Тут должна быть статистика" Command="{Binding OpenStatistics}"/>
             </MenuItem>
             <MenuItem Header="Категории">
                 <MenuItem Header="Добавить категорию" Command="{Binding AddCategory}"/>
                 <MenuItem Header="Удалить категорию" Command="{Binding DeleteCategory}"/>
-            </MenuItem>            
+            </MenuItem>
             <MenuItem Header="Услуги">
-                <MenuItem Header="Добавить услугу"/>
-                <MenuItem Header="Удалить услугу"/>
+                <MenuItem Header="Добавить услугу" Command="{Binding AddService}"/>
+                <MenuItem Header="Удалить услугу" Command="{Binding DeleteService}"/>
             </MenuItem>
         </Menu>
         <TextBlock Grid.Column="1" Grid.Row="2">
-            <Hyperlink TextDecorations="None" Command="{Binding OnLoad}">                
-                <Button Command="{Binding OnLoad}"></Button>
-                <Image  Source="D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\update.png"  ></Image>
-            </Hyperlink>            
+            <Hyperlink TextDecorations="None" Command="{Binding OnLoad}">                      
+                <Image  Source="D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\update.png"/>
+            </Hyperlink>
         </TextBlock>
-        
 
-        <Label Grid.Row="2" Content="Категории" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="16" Foreground="Aqua" Grid.Column="2"/>
+
+        <Label Grid.Row="2" Content="Категории" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="20" Foreground="Aqua" Grid.Column="2" Height="33" Width="105" />
         <Label Grid.Row="2" Grid.Column="3" Content="Сервисы в данной категории"
-               HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="16" Foreground="Aqua"
-               Margin="0, 0, 50, 0"/>
+               HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="20" Foreground="Aqua"
+               Margin="0, 0, 20, 0" />
 
 
         <ListBox ItemsSource="{Binding Categories, UpdateSourceTrigger=PropertyChanged}"
                  SelectedItem="{Binding SelectedCategory}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" />
 
         <ListBox ItemsSource="{Binding Services, UpdateSourceTrigger=PropertyChanged}"
+                 SelectedItem="{Binding SelectedService, UpdateSourceTrigger=PropertyChanged}"
                  Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="1" Margin="10, 0, 0, 0" />
 
 
-        <Button Grid.Row="4" Command="{Binding OnLoad}" Grid.ColumnSpan="4"></Button>
+        <Menu Grid.Row="4" Grid.ColumnSpan="4"></Menu>
     </Grid>
 </Window>

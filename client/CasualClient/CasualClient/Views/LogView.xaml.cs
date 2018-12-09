@@ -10,21 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CasualClient
+namespace CasualClient.Views
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Log.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LogView : Window
     {
-        public MainWindow()
+        public LogView()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
-
-
     }
 }

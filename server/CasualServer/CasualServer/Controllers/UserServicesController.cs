@@ -35,16 +35,15 @@ namespace CasualServer.Controllers
             return Json(result);
         }
 
+        [Route("user")]
         [HttpGet("{value}")]
         public JsonResult GetUserServicesOfUser(string value)
         {
             var result = _dbContext.UserServices
                             .Where(us => us.User.Nickname == value)
                             .Select(us => new
-                            {
-                                UserServiceId = us.UserServiceId,
-                                UserId = us.User.UserId,
-                                ServiceId = us.Service.ServiceId
+                            {                                
+                                ServiceName = us.Service.ServiceName
                             })
                             .ToList();
 

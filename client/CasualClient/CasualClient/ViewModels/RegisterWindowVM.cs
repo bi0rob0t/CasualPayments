@@ -61,6 +61,7 @@ namespace CasualClient.ViewModels
                         MessageBox.Show("Пользователь с таким логином или никнеймом уже существует");
                     else
                     {
+                        // Тут должно быть добавление Action и потом добавление его в Log
                         AuthWindow aw = new AuthWindow();
                         w.Close();
                         aw.Show();

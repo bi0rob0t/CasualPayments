@@ -25,6 +25,12 @@ namespace CasualServer.Controllers
             return Json(_dbContext.Users.ToList());
         }
 
+        [Route("nickname")]
+        [HttpGet]
+        public JsonResult GetUsers([FromHeader]string username)
+        {
+            return Json(_dbContext.Users.Where(u => u.Nickname == username).First());
+        }
 
 
         [HttpPost]

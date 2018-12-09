@@ -26,3 +26,9 @@ D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\D
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\RegisterWindow.g.cs
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\RegisterWindow.baml
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Styles\Brushes.baml
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Styles\Core.baml
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Styles\Core.g.cs
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\App.baml
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\AddCategory.g.cs
+D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\obj\Debug\Views\AddCategory.baml

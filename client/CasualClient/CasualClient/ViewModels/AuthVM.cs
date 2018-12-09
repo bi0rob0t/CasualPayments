@@ -27,29 +27,30 @@ namespace CasualClient.ViewModels
             get { return _password; }
             set { _password = value; RaisePropertyChanged("Password"); }
         }
+
         public DelegateCommand<Window> OpenMainWindow
         {
             get
             {
                 return new DelegateCommand<Window>((w) =>
-                {
-                    bool logPassIsValid = CheckLogPass();
-                    if(logPassIsValid)
+                {                    
+                    switch (CheckLogPass())
                     {
-                        MainWindow mw = new MainWindow();
-                        MainWindowVM mwVm = new MainWindowVM();
-                        mw.DataContext = mwVm;
-                        w.Close();
-                        mw.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Логин или пароль введены неверно");
+                        case 1:                            
+                            MainWindow mw = new MainWindow();
+                            w.Close();
+                            mw.Show();
+                            break;
+                        case 0:
+                            MessageBox.Show("Логин или пароль введены неверно");
+                            break;
+                        case 404: break;
                     }
                 });
             }
         }
-        private bool CheckLogPass()
+
+        private int CheckLogPass()
         {
             
             //////////////////////////////////////////////////////
@@ -60,20 +61,30 @@ namespace CasualClient.ViewModels
             // устанавливаем тип содержимого - параметр ContentType
             request.ContentType = "application/json";
 
-            string result;
-            WebResponse response = request.GetResponse();
-            using (Stream stream = response.GetResponseStream())
+            string result = "";
+            try
             {
-                using (StreamReader reader = new StreamReader(stream))
+                WebResponse response = request.GetResponse();
+                using (Stream stream = response.GetResponseStream())
                 {
-                    result = reader.ReadToEnd();
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        result = reader.ReadToEnd();
+                    }
                 }
+                
             }
+            catch
+            {
+                MessageBox.Show("Сервер временно недоступен");
+                return 404;
+            }
+            
 
             if (result == "true")
-                return true;
+                return 1;
             else
-                return false;
+                return 0;
         }
 
         public DelegateCommand<Window> OpenRegisterWindow
@@ -82,13 +93,9 @@ namespace CasualClient.ViewModels
             {
                 return new DelegateCommand<Window>((w) =>
                 {
-
                     RegisterWindow rw = new RegisterWindow();
-                    RegisterWindowVM rwVm = new RegisterWindowVM();
-                    rw.DataContext = rwVm;
                     w.Close();
                     rw.Show();
-
                 });
             }
         }

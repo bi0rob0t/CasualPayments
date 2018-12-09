@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\App.xaml
-31558717757
+6445526462
 
-15-1069700531
+19350170953
 161468222445
-Views\AuthWindow.xaml;Views\MainWindow.xaml;Views\RegisterWindow.xaml;
+Styles\Brushes.xaml;Styles\Core.xaml;Views\AddCategory.xaml;Views\AuthWindow.xaml;Views\MainWindow.xaml;Views\RegisterWindow.xaml;
 
-True
+False
 

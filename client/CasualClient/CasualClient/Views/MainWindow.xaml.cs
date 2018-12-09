@@ -24,5 +24,10 @@ namespace CasualClient
         {
             InitializeComponent();            
         }
+
+        private void Hyperlink_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

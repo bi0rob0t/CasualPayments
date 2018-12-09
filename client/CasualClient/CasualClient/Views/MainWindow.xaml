@@ -4,9 +4,68 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CasualClient"
+        xmlns:vm="clr-namespace:CasualClient.ViewModels"        
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Casual Paymants" Height="450" Width="800"
+        Icon="../icon.ico" 
+        Background="DimGray"
+        >
+    <Window.DataContext>
+        <vm:MainWindowVM/>
+    </Window.DataContext>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="564*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="307*"/>
+            <RowDefinition Height="36*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row ="0" Grid.ColumnSpan="4">
+            <MenuItem Header="Пользователи">
+                <MenuItem Header="Информация о пользователях"/>
+            </MenuItem>
+            <MenuItem Header="Лог">
+                <MenuItem Header="Просмотреть лог"/>
+                <MenuItem Header="Тут должна быть статистика"/>
+            </MenuItem>
+            <MenuItem Header="Категории">
+                <MenuItem Header="Добавить категорию" Command="{Binding AddCategory}"/>
+                <MenuItem Header="Удалить категорию" Command="{Binding DeleteCategory}"/>
+            </MenuItem>            
+            <MenuItem Header="Услуги">
+                <MenuItem Header="Добавить услугу"/>
+                <MenuItem Header="Удалить услугу"/>
+            </MenuItem>
+        </Menu>
+        <TextBlock Grid.Column="1" Grid.Row="2">
+            <Hyperlink TextDecorations="None" Command="{Binding OnLoad}">                
+                <Button Command="{Binding OnLoad}"></Button>
+                <Image  Source="D:\Курсач\2 курс\CasualPayments\client\CasualClient\CasualClient\update.png"  ></Image>
+            </Hyperlink>            
+        </TextBlock>
         
+
+        <Label Grid.Row="2" Content="Категории" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="16" Foreground="Aqua" Grid.Column="2"/>
+        <Label Grid.Row="2" Grid.Column="3" Content="Сервисы в данной категории"
+               HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="16" Foreground="Aqua"
+               Margin="0, 0, 50, 0"/>
+
+
+        <ListBox ItemsSource="{Binding Categories, UpdateSourceTrigger=PropertyChanged}"
+                 SelectedItem="{Binding SelectedCategory}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" />
+
+        <ListBox ItemsSource="{Binding Services, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="1" Margin="10, 0, 0, 0" />
+
+
+        <Button Grid.Row="4" Command="{Binding OnLoad}" Grid.ColumnSpan="4"></Button>
     </Grid>
 </Window>

@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CasualClient.Views"
         mc:Ignorable="d"
-        Title="RegisterWindow" Height="450" Width="800">
+        Title="Регистрация" Height="450" Width="450"
+        xmlns:vm ="clr-namespace:CasualClient.ViewModels"
+        Icon="../icon.ico"
+        Background="DimGray">
+    <Window.DataContext>
+        <vm:RegisterWindowVM/>
+    </Window.DataContext>
+
+
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="27*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="107*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="101*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row = "1" Grid.Column ="1" Grid.ColumnSpan="3" Content="Логин" Foreground="Aqua"/>
+        <TextBox Text="{Binding Login}"  Grid.Row = "2" Grid.Column ="1" Grid.ColumnSpan="3"  />
+
+
+        <Label Grid.Row = "3" Grid.Column ="1" Grid.ColumnSpan="3" Content ="Пароль" Foreground="Aqua"/>
+        <TextBox Text="{Binding Password}" Grid.Row = "4" Grid.Column ="1" Grid.ColumnSpan="3"/>
+
+
+        <Label Grid.Row = "5" Grid.Column ="1" Grid.ColumnSpan="3" Content ="Псевдоним" Foreground="Aqua"/>
+        <TextBox Text="{Binding Nickname}" Grid.Row = "6" Grid.Column ="1" Grid.ColumnSpan="3"/>
+        
+
+        <Button Content="Регистрация" Grid.Row = "8" Grid.Column ="1"
+                Command="{Binding AddUser}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+
         
     </Grid>
 </Window>

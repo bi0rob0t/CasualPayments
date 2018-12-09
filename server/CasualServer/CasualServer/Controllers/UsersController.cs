@@ -28,11 +28,23 @@ namespace CasualServer.Controllers
 
 
         [HttpPost]
-        public void AddUser([FromHeader]string nickname, [FromHeader]string login, [FromHeader]string password)
+        public bool AddUser([FromHeader]string nickname, [FromHeader]string login, [FromHeader]string password)
         {
 
-            _dbContext.Users.Add(new User { Login = login, Nickname = nickname, Password = password });
-            _dbContext.SaveChanges();
+            var entity = _dbContext.Users.Where(u => u.Login == login || u.Nickname == nickname).ToList();
+            if (entity.Count == 0)
+            {
+                _dbContext.Users.Add(new User { Login = login, Nickname = nickname, Password = password });
+                _dbContext.SaveChanges();
+                return true;
+            }                
+            else
+            {
+                return false;
+            }
+            
+            
+
         }
 
         [HttpDelete("{value}")]

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CasualServer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CasualServer.Controllers
 {
@@ -19,6 +20,7 @@ namespace CasualServer.Controllers
             this._dbContext = dbContext;
         }
 
+        [Route("all")]
         [HttpGet]
         public JsonResult GetServices()
         {
@@ -32,6 +34,23 @@ namespace CasualServer.Controllers
                 .ToList();
             return Json(result);
         }
+
+        [HttpGet]
+        public JsonResult GetServicesOfCategory([FromHeader] string desiredCategoryName)
+        {            
+            var result = _dbContext.Services                                
+                .Select(service => new
+                {
+                    ServiceId = service.ServiceId,
+                    ServiceName = service.ServiceName,
+                    CategoryName = service.Category.CategoryName
+
+                })
+                .Where(c => c.CategoryName == desiredCategoryName)
+                .ToList();
+            return Json(result);
+        }
+
 
         [HttpPost]
         public void AddService([FromHeader]string serviceName, [FromHeader]string categoryName)

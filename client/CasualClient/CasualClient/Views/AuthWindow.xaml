@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CasualClient.Views"
         mc:Ignorable="d"
-        Title="AuthWindow" Height="450" Width="450"
-        xmlns:vm ="clr-namespace:CasualClient.ViewModels">
+        Title="Авторизация" Height="450" Width="450"
+        xmlns:vm ="clr-namespace:CasualClient.ViewModels"
+        Icon="../icon.ico"
+        Background="DimGray">
     <Window.DataContext>
         <vm:AuthVM/>
     </Window.DataContext>
@@ -30,10 +32,10 @@
         </Grid.RowDefinitions>
 
         <TextBox Text="{Binding Login}"  Grid.Row = "2" Grid.Column ="1" Grid.ColumnSpan="3"  />
-        <Label Grid.Row = "1" Grid.Column ="1" Grid.ColumnSpan="3" Content="Логин"/>
+        <Label Grid.Row = "1" Grid.Column ="1" Grid.ColumnSpan="3" Content="Логин"  Foreground="Aqua"/>
 
         <TextBox Text="{Binding Password}" Grid.Row = "4" Grid.Column ="1" Grid.ColumnSpan="3"/>
-        <Label Grid.Row = "3" Grid.Column ="1" Grid.ColumnSpan="3" Content ="Пароль"/>
+        <Label Grid.Row = "3" Grid.Column ="1" Grid.ColumnSpan="3" Content ="Пароль"  Foreground="Aqua"/>
         
         <Button Content="Войти" Grid.Row = "6" Grid.Column ="1"
                 Command="{Binding OpenMainWindow}"

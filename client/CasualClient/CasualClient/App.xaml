@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:CasualClient"
              StartupUri="Views\AuthWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles\Brushes.xaml" />
+                <ResourceDictionary Source="Styles\Core.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
